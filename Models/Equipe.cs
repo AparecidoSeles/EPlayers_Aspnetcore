@@ -37,7 +37,15 @@ namespace EPlayers_Aspnetcore.Models
 
         public void Delete(int id)
         {
-            throw new System.NotImplementedException();
+             List<string> linhas = ReadAllLinesCVS(PATH);
+
+             //2;SNK;snk.jpg
+             //Rempvemos a linhas com o codigo comparado
+             //ToString Converte para texto
+            linhas.RemoveAll(x => x.Split(";")[0] == id.ToString());
+
+            //reescreve o csv com a lista alterada
+            RewriteCSV(PATH, linhas);
         }
 
         public List<Equipe> ReadAll()
@@ -65,7 +73,18 @@ namespace EPlayers_Aspnetcore.Models
 
         public void Update(Equipe e)
         {
-            
+            List<string> linhas = ReadAllLinesCVS(PATH);
+
+             //2;SNK;snk.jpg
+             //Rempvemos a linhas com o codigo comparado
+             //ToString converte para texto o IdEquipe  
+            linhas.RemoveAll(x => x.Split(";")[0] == e.IdEquipe.ToString());
+
+            //adicionamos na lista a equipe alterada
+            linhas.Add(Prepare (e));
+
+            //reescreve o csv com a lista alterada
+            RewriteCSV(PATH, linhas);
         }
     }
 } 
