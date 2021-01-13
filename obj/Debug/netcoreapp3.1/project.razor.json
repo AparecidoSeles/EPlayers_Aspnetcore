@@ -14402,6 +14402,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\Views\\Equipe\\index.cshtml",
+      "TargetPath": "Views\\Equipe\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
