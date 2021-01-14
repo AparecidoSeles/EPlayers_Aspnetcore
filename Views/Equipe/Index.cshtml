@@ -1,6 +1,6 @@
 @model Equipe 
 @{
-    ViewData["Title"] = "Equipe"
+    ViewData["Title"] = "Equipe";
 }
 
 <form method="POST" action='@Url.Action("CAdastrar")'>
@@ -23,6 +23,13 @@
         <th>Foto</th>
     </thead>
     <tbody>
-        
+        @foreach (Equipe equipe in ViewBag.Equipes)
+        {
+            <tr>
+                <td>@equipe.IdEquipe</td>
+                <td>@equipe.Nome</td>
+                <td>@equipe.Imagem</td>
+            </tr>
+        }
     </tbody>
 </table>

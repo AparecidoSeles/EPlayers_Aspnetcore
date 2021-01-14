@@ -19,7 +19,7 @@ namespace EPlayers_Aspnetcore.Controllers
             ViewBag.Equipes = equipeModel.ReadAll();
             return View();
         }  
-
+        [Route("Cadastrar")]
         public IActionResult Cadastrar(IFormCollection form)
         {
             Equipe novaEquipe   = new Equipe();
