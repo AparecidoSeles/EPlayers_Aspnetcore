@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using EPlayers_Aspnetcore.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,8 @@ namespace EPlayers_Aspnetcore.Controllers
     {
         //craimos uma instancia de eqeuipeModel
         Equipe equipeModel = new Equipe();
+
+        [Route("Listar")]
         public IActionResult Index()
         {
 
@@ -25,7 +28,35 @@ namespace EPlayers_Aspnetcore.Controllers
             Equipe novaEquipe   = new Equipe();
             novaEquipe.IdEquipe = Int32.Parse(form ["IdEquipe"]);
             novaEquipe.Nome     = form["Nome"];
-            novaEquipe.Imagem   = form["Imagem"];
+            
+            //Upload inicio 
+            //verificamos se o usuario selecionou um arquivo
+            if (form.Files.Count > 0)
+            {   //recebemos o arquivo que o usuario enviou e armazenamos na variável file
+                var file = form.Files[0];
+                var folder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/Equipes");
+
+                //verificamos se o diretorio (pasta) ja exite , se nao o criamos
+                if(!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+
+        //                                      Localhost:5001                               Equipes    imagem.jpg
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder,   file.FileName);
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    novaEquipe.Imagem = file.FileName;
+                }else 
+                {
+                    novaEquipe.Imagem = "Padrão.png";
+                }
+            }
+
+
+            //upload término
 
             //Chamamos o método Create para salvar a nova equipe no CSV
             equipeModel.Create(novaEquipe);
@@ -33,7 +64,7 @@ namespace EPlayers_Aspnetcore.Controllers
             //Atualiza a lista de equipes na View
             ViewBag.Equipes = equipeModel.ReadAll();
 
-            return LocalRedirect("~/Equipe");
+            return LocalRedirect("~/Equipe/Listar");
         }
     }
 }
