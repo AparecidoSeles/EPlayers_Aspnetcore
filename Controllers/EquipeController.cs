@@ -72,6 +72,13 @@ namespace EPlayers_Aspnetcore.Controllers
 
         //https://localhost:5000/Equipe/Deletar]
         [Route("{id}")]
-        public IActionResult Excluir()
+        public IActionResult Excluir(int id)
+
+        {
+            equipeModel.Delete(id);
+            ViewBag.Equipe = equipeModel.ReadAll();
+
+            return LocalRedirect("~/Equipe/Listar");
+        }
     }
 }
