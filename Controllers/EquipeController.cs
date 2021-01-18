@@ -43,6 +43,7 @@ namespace EPlayers_Aspnetcore.Controllers
                 if(!Directory.Exists(folder))
                 {
                     Directory.CreateDirectory(folder);
+                }
 
                 //                                      Localhost:5001                       Equipes    imagem.jpg
                     var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder,   file.FileName);
@@ -52,10 +53,10 @@ namespace EPlayers_Aspnetcore.Controllers
                     }
 
                     novaEquipe.Imagem = file.FileName;
-                }else 
-                {
-                    novaEquipe.Imagem = "padrao.png";
-                }
+            }
+            else 
+            {
+                novaEquipe.Imagem = "padrao.png";
             }
 
 
