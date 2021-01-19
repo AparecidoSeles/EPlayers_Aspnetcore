@@ -1,7 +1,6 @@
 @model Equipe 
 @{
     ViewData["Title"] = "Equipes";
-
 }
 
 <div class= "titulo pagina">
@@ -9,11 +8,11 @@
 </div>
 
                                                      @* trabalhar com arquivos *@
-<form calss="Cadastro" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
+<form method="POST" action='@Url.Action("Cadastrar")'  enctype="multipart/form-data" calss="cadastro">
 
-    <div class="campo"></div>
+    <div class="campo">
         <label>ID</label>
-        <Input type="text" name="IdEquipe"/>
+        <Input type="text" name="IdEquipe"/>        
     </div>
 
     <div class="campo">
@@ -34,6 +33,7 @@
         <th>ID</th>
         <th>Nome</th>
         <th>Foto</th>
+        <th>Ação</th>
         
     </thead>
     <tbody>

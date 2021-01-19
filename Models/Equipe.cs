@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using EPlayers_Aspnetcore.Interfaces;
@@ -19,6 +20,13 @@ namespace EPlayers_Aspnetcore.Models
         {
             CreateFolderAndFile(PATH);
         }
+        public void Create(Equipe e)
+        {
+            //preparamos um areey de string para o método AppendAllLines
+            string[] linhas = { Prepare(e) };
+            // acrescetamos a nova linha 
+            File.AppendAllLines(PATH, linhas);
+        }
 
         // Criamos p método para preparar a linha do csv
         public string Prepare(Equipe e)
@@ -27,14 +35,7 @@ namespace EPlayers_Aspnetcore.Models
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
 
-        public void Create(Equipe e)
-        {
-            //preparamos um areey de string para o método AppendAllLines
-            string[] linhas =  { Prepare(e) };
-            // acrescetamos a nova linha 
-            File.AppendAllLines(PATH, linhas);
-        }
-
+        //método para deletar 
         public void Delete(int id)
         {
              List<string> linhas = ReadAllLinesCVS(PATH);
@@ -57,10 +58,10 @@ namespace EPlayers_Aspnetcore.Models
 
             foreach (string item in linhas)
             {   // 1;Vivokeyd;vivo.jpg
-                string[] linha = item.Split(";");           // Split serve para quebrar a linha 
+                string[] linha = item.Split(";");           // Split(";") serve para quebrar a linha 
 
                 Equipe novaEquipe   = new Equipe();
-                novaEquipe.IdEquipe = int.Parse(linha [0] );
+                novaEquipe.IdEquipe = Int32.Parse( linha [0] );
                 novaEquipe.Nome     = linha [1];
                 novaEquipe.Imagem   = linha [2];
 
@@ -78,7 +79,10 @@ namespace EPlayers_Aspnetcore.Models
              //2;SNK;snk.jpg
              //Rempvemos a linhas com o codigo comparado
              //ToString converte para texto o IdEquipe  
-            linhas.RemoveAll(x => x.Split(";")[0] == e.IdEquipe.ToString());
+            linhas.RemoveAll(
+            x => 
+            x.Split(";")[0]
+            == e.IdEquipe.ToString());
 
             //adicionamos na lista a equipe alterada
             linhas.Add(Prepare (e));

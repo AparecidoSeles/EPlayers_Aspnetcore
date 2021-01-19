@@ -29,7 +29,7 @@ namespace EPlayers_Aspnetcore.Controllers
         public IActionResult Cadastrar(IFormCollection form)
         {
             Equipe novaEquipe   = new Equipe();
-            novaEquipe.IdEquipe = Int32.Parse(form["IdEquipe"]);
+            novaEquipe.IdEquipe = Int32.Parse( form["IdEquipe"] );
             novaEquipe.Nome     = form["Nome"];
             
             //Upload inicio 
@@ -43,16 +43,16 @@ namespace EPlayers_Aspnetcore.Controllers
                 if(!Directory.Exists(folder))
                 {
                     Directory.CreateDirectory(folder);
+                } 
+
+                //                                      Localhost:5001                       Equipes   imagem.jpg
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder,  file.FileName);
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
                 }
 
-                //                                      Localhost:5001                       Equipes    imagem.jpg
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", folder,   file.FileName);
-                    using (var stream = new FileStream(path, FileMode.Create))
-                    {
-                        file.CopyTo(stream);
-                    }
-
-                    novaEquipe.Imagem = file.FileName;
+                novaEquipe.Imagem = file.FileName;
             }
             else 
             {
