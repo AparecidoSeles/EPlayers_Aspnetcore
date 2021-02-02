@@ -18,7 +18,6 @@ namespace EPlayers_Aspnetcore.Controllers
         [Route("Listar")]
         public IActionResult Index()
         {
-
             //Listamos todas as equipes  e enviamos para a View, através da ViewBag 
             ViewBag.Equipes = equipeModel.ReadAll();
             return View();

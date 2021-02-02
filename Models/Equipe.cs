@@ -38,7 +38,7 @@ namespace EPlayers_Aspnetcore.Models
         //método para deletar 
         public void Delete(int id)
         {
-             List<string> linhas = ReadAllLinesCVS(PATH);
+             List<string> linhas = ReadAllLinesCSV(PATH);
 
              //2;SNK;snk.jpg
              //Rempvemos a linhas com o codigo comparado
@@ -74,7 +74,7 @@ namespace EPlayers_Aspnetcore.Models
 
         public void Update(Equipe e)
         {
-            List<string> linhas = ReadAllLinesCVS(PATH);
+            List<string> linhas = ReadAllLinesCSV(PATH);
 
              //2;SNK;snk.jpg
              //Rempvemos a linhas com o codigo comparado

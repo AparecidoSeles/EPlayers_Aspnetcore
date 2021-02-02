@@ -11,7 +11,7 @@
 }
 body{
     background-color: var(--background);
-    font-family: 'Titillium Web','Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    font-family: 'Titillium Web','Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif ;
 }
 .gradient{
     background: rgba(213,55,155,1);

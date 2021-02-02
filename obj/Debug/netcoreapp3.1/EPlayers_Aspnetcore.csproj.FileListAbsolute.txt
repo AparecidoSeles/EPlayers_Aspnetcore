@@ -72,3 +72,4 @@ C:\Users\Ariel\OneDrive\Desktop\junior senai\EPlayers_Aspnetcore\obj\Debug\netco
 C:\Users\Ariel\OneDrive\Desktop\junior senai\EPlayers_Aspnetcore\obj\Debug\netcoreapp3.1\EPlayers_Aspnetcore.pdb
 C:\Users\Ariel\OneDrive\Desktop\junior senai\EPlayers_Aspnetcore\obj\Debug\netcoreapp3.1\EPlayers_Aspnetcore.genruntimeconfig.cache
 C:\Users\Ariel\OneDrive\Desktop\junior senai\EPlayers_Aspnetcore\obj\Debug\netcoreapp3.1\EPlayers_Aspnetcore.csproj.CopyComplete
+C:\Users\Ariel\OneDrive\Desktop\junior senai\EPlayers_Aspnetcore\obj\Debug\netcoreapp3.1\Razor\Views\Jogador\Index.cshtml.g.cs

@@ -22,7 +22,7 @@ namespace EPlayers_Aspnetcore.Models
 
         }
 
-        public List<string>  ReadAllLinesCVS(string path)
+        public List<string>  ReadAllLinesCSV(string path)
         {
             List<string> linhas = new List<string>();
             //using --> responsavel por abrir e fechar o arquivo automaticamente
