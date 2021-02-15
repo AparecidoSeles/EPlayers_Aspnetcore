@@ -1,38 +1,38 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace EPlayers_Aspnetcore.Models
+namespace E_Players_AspNETCore.Models
 {
     public class EplayersBase
     {
         public void CreateFolderAndFile(string _path)
         {
-            string folder  = _path.Split("/")[0];
-            string file    = _path.Split("/")[1];
+            string folder = _path.Split("/")[0];
+            string file = _path.Split("/")[1];
 
-            if(!Directory.Exists(folder))
+            if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
             }
 
-            if(!File.Exists(_path))
+            if (!File.Exists(_path))
             {
-                File.Create(_path);
+                File.Create(_path).Close();
             }
-
         }
 
-        public List<string>  ReadAllLinesCSV(string path)
+        public List<string> ReadAllLinesCSV(string PATH)
         {
             List<string> linhas = new List<string>();
-            //using --> responsavel por abrir e fechar o arquivo automaticamente
-            //streamReader --> ler dados de um arquivo
-            using(StreamReader file = new StreamReader(path))
+
+            // Using -> Responsável pro abrir e fechar o arquivo automaticamente
+            // StreamReader -> Ler dados de um arquivo
+            using(StreamReader file = new StreamReader(PATH))
             {
                 string linha;
 
-                //percorrer as linhas com um laço de while
-                while ((linha = file.ReadLine()) != null)
+                // Percorres as linhas com um laço while
+                while((linha = file.ReadLine()) != null)
                 {
                     linhas.Add(linha);
                 }
@@ -41,15 +41,14 @@ namespace EPlayers_Aspnetcore.Models
             return linhas;
         }
 
-        public void RewriteCSV(string path , List<string> linhas)
+        public void RewriteCSV(string PATH, List<string> linhas)
         {
-            //streamwriter --> escrever dados de um arquivo 
-
-            using (StreamWriter output = new StreamWriter(path))
+            // StreamWritter -> escrever dados em um arquivo
+            using(StreamWriter output = new StreamWriter(PATH))
             {
-                foreach (var item in linhas)
+                foreach(var item in linhas)
                 {
-                    output.Write(item + '\n');
+                    output.Write(item + "\n");
                 }
             }
         }

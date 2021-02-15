@@ -3,26 +3,28 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using EPlayers_Aspnetcore.Models;
+using E_Players_AspNETCore.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EPlayers_Aspnetcore.Controllers
+namespace E_Players_AspNETCore.Controllers
 {
-    [Route ("Jogador")]
+    [Route("Jogador")]
     public class JogadorController : Controller
     {
-        //Instanciamos Jogador dentro da classe e chamamos uma ViewBag 
-        //como apoio e retorno para listar os jogadores disponíveis:
         Jogador jogadorModel = new Jogador();
+        Equipe equipeModel = new Equipe();
+                
+        [Route("Listar")]
         public IActionResult Index()
         {
+            ViewBag.Equipes = equipeModel.ReadAll();
             ViewBag.Jogadores = jogadorModel.ReadAll();
             return View();
-        }       
+        }
 
-        // Criamos o método Cadastrar, passando como argumento um IFormCollection:
-         public IActionResult Cadastrar(IFormCollection form)
+        [Route("Cadastrar")]
+        public IActionResult Cadastrar(IFormCollection form)
         {
             Jogador novoJogador     = new Jogador();
             novoJogador.IdJogador   = Int32.Parse(form["IdJogador"]);
@@ -33,7 +35,18 @@ namespace EPlayers_Aspnetcore.Controllers
             jogadorModel.Create(novoJogador);            
             ViewBag.Jogadores = jogadorModel.ReadAll();
 
-            return LocalRedirect("~/Jogador");
+            return LocalRedirect("~/Jogador/Listar");
         }
+
+        [Route("{id}")]
+        public IActionResult Excluir(int id)
+        {
+            jogadorModel.Delete(id);
+            ViewBag.Jogador = jogadorModel.ReadAll();
+            return LocalRedirect("~/Jogador/Listar");
+        }
+
+
+
     }
 }

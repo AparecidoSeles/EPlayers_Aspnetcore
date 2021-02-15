@@ -5,9 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using EPlayers_Aspnetcore.Models;
+using E_Players_AspNETCore.Models;
+using Microsoft.AspNetCore.Http;
 
-namespace EPlayers_Aspnetcore.Controllers
+namespace E_Players_AspNETCore.Controllers
 {
     public class HomeController : Controller
     {
@@ -20,6 +21,7 @@ namespace EPlayers_Aspnetcore.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.UserName = HttpContext.Session.GetString("_UserName");
             return View();
         }
 
@@ -28,6 +30,5 @@ namespace EPlayers_Aspnetcore.Controllers
             return View();
         }
 
-       
     }
 }

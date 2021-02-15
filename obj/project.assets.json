@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\EPlayers_Aspnetcore.csproj",
-      "projectName": "EPlayers_Aspnetcore",
-      "projectPath": "C:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\EPlayers_Aspnetcore.csproj",
+      "projectUniqueName": "C:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\E-Players_AspNETCore.csproj",
+      "projectName": "E-Players_AspNETCore",
+      "projectPath": "C:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\E-Players_AspNETCore.csproj",
       "packagesPath": "C:\\Users\\Ariel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\EPlayers_Aspnetcore.csproj",
+  "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\E-Players_AspNETCore.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14389,7 +14389,7 @@
     ],
     "CSharpLanguageVersion": 800
   },
-  "RootNamespace": "EPlayers_Aspnetcore",
+  "RootNamespace": "E_Players_AspNETCore",
   "Documents": [
     {
       "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -14407,6 +14407,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\Views\\Login\\Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\Views\\Equipe\\Index.cshtml",
       "TargetPath": "Views\\Equipe\\Index.cshtml",
       "FileKind": "mvc"
@@ -14419,11 +14424,6 @@
     {
       "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Ariel\\OneDrive\\Desktop\\junior senai\\EPlayers_Aspnetcore\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {

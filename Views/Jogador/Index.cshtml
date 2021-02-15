@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "Jogadores";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
 
 <div class="titulo_pagina">
     <h1>cadastro de @ViewData["Title"]</h1>
@@ -16,7 +18,14 @@
 
     <div class="campo">
         <label>ID Equipe</label>
-        <input type="text" name="IdEquipe" />
+        <select name="IdEquipe" id="IdEquipe">
+            <option value="0">Selecione uma opção...</option>
+            @foreach (var item in ViewBag.Equipes)
+            {
+                <option value="@item.IdEquipe">@item.Nome</option>
+            }
+        </select>
+        </select>
     </div>
 
     <div class="campo">
@@ -42,6 +51,7 @@
         <th>ID</th>
         <th>Nome</th>
         <th>Email</th>
+        <th>Ações</th>
     </thead>
     <tbody>
         @foreach(Jogador j in ViewBag.Jogadores){
@@ -49,6 +59,7 @@
                 <td>@j.IdJogador</td>
                 <td>@j.Nome</td>
                 <td>@j.Email</td>
+                <td><a asp-area="Link para excluir um jogador" asp-controller="Jogador" asp-action="Excluir" asp-route-id="@j.IdJogador"><i class="fas fa-trash"></i></a></td>
             </tr>
         }
     </tbody>

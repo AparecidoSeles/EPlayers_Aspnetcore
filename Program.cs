@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace EPlayers_Aspnetcore
+namespace E_Players_AspNETCore
 {
     public class Program
     {

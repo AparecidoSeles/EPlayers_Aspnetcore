@@ -11,7 +11,7 @@
 }
 body{
     background-color: var(--background);
-    font-family: 'Titillium Web','Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif ;
+    font-family: 'Titillium Web','Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
 .gradient{
     background: rgba(213,55,155,1);
@@ -72,10 +72,16 @@ ul{
     text-transform: uppercase;
     padding: 8px 12px;
     border-radius: 5px;
+    margin: 20px;
 }
 
 .banner .btn{
-    margin-top: 230px;
+    margin: 230px;
+}
+
+
+.erro{
+    color: var(--pink);
 }
 
 .sobre{
@@ -276,6 +282,7 @@ footer p{
 }
 .campo{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
     color: white;
